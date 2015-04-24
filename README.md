@@ -27,3 +27,6 @@ mengfei_orders  商品订单表
 mengfei_order_goods 商品订单关联表
 
 mengfei_cart 商品购物车
+
+
+我随便改的，你能收到吗？
