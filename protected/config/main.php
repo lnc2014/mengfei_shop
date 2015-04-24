@@ -7,8 +7,9 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
-
+	'name'=>'梦飞商城-满足你所有的需求',
+	//定义北京时间，不然使用date函数的时候会出现时间的误差
+	'timeZone'=>'Asia/Shanghai',
 	// preloading 'log' component
 	'preload'=>array('log'),
 
@@ -50,16 +51,15 @@ return array(
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
-		// uncomment the following to use a MySQL database
-		/*
+		//链接本地的数据库，暂时不更新到线上的数据库
+		//修改这里的数据库就可以了
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
+			'connectionString' => 'mysql:host=localhost;dbname=mengfei_shop',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'lnc',
+			'password' => '123456',
 			'charset' => 'utf8',
 		),
-		*/
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -80,11 +80,8 @@ return array(
 			),
 		),
 	),
-
+	//系统的全局变量
 	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params'=>array(
-		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
-	),
+	// using Yii::app()->params['paramName'] 变量的使用方法
+	'params'=> require (dirname(__FILE__) . '/params.php'),
 );
