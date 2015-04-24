@@ -37,8 +37,7 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
-		// uncomment the following to enable URLs in path-format
-		/*
+		//后台路由的配置
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -46,8 +45,40 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
+			'showScriptName' => false,//是否开启伪静态 
+			//具体操作： 
+			/* 
+			 *  1.开启apache的mod_rewrite模块
+				     去掉LoadModule rewrite_module modules/mod_rewrite.so前的“#”符号
+				     确保<Directory "..."></Directory>中有“AllowOverride All”
+				2.在项目中的/protected/config/main.php中添加代码：
+				-----------------------------------------------------------------------------
+				'components'=>array(
+				           ...
+				           'urlManager'=>array(
+				                 'urlFormat'=>'path',
+				                 'showScriptName'=>false,//注意false不要用引号括上
+				           'urlSuffix'=>'.html',
+				                 'rules'=>array(
+				                     'sites'=>'site/index',
+				                 ),
+				           ),
+				           ...
+				       ),
+				------------------------------------------------------------------------------
+				3.在与index.php文件同级目录下添加文件“.htaccess”，内容如下：   
+				----------------------------------------------------------------
+			    Options +FollowSymLinks
+			    IndexIgnore *\/*  
+			    /* RewriteEngine on
+			    # if a directory or a file exists, use it directly
+			    RewriteCond %{REQUEST_FILENAME} !-f
+			    RewriteCond %{REQUEST_FILENAME} !-d
+			    # otherwise forward it to index.php
+			    RewriteRule . index.php */
+// 			 **/
 		),
-		*/
+			
 		'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),
