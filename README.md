@@ -1,8 +1,10 @@
 # mengfei_shop
 梦想飞翔的一个商城，满足你的所有需求，满足所有你想要的。
 
-开发所用的各个版本的信息
+##开发工具及版本号
+>开发工具：zendstudio + SQLyog + notepad++ + wampsever 
 
+>开发资源版本号：
 yii 1.1.15 + Apache 2.49 + Mysql 5.67.17 + PHP 5.5.12
 
 
