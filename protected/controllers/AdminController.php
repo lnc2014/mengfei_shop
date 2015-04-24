@@ -5,9 +5,11 @@
 *
 *	管理控制器
 */ 
-class AdminController extends CController{
+class AdminController extends BaseAdminController{
 	
-	
+	public function init(){
+		parent::init();
+	}
 	public function actionIndex(){
 		$this->render('index');
 	}

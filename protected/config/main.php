@@ -12,7 +12,7 @@ return array(
 	'timeZone'=>'Asia/Shanghai',
 	// preloading 'log' component
 	'preload'=>array('log'),
-
+	
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
