@@ -42,7 +42,8 @@
 <!-- external javascript -->
 
 <script src="<?php echo $this->adminPath?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
+<!-- library for cookie management -->
+<script src="<?php echo $this->adminPath?>/js/jquery.cookie.js"></script>
 <!-- calender plugin -->
 <script src='<?php echo $this->adminPath?>/bower_components/moment/min/moment.min.js'></script>
 <script src='<?php echo $this->adminPath?>/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
