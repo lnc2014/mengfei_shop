@@ -36,4 +36,15 @@ class BaseAdminController extends CController{
     {
     	$this->adminPath = Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'admin';
     }
+    
+    /**
+     * 重写createUrl方法
+     * 如果存在aliasName参数默认追加，避免每次都传递aliasName参数
+     */
+    public function createUrl($route, $params = array(), $ampersand = '&') {
+    	if(isset($_GET['aliasName']) && !isset($params['aliasName'])) {
+    		$params=array_merge($params,array('aliasName'=>$_GET['aliasName']));
+    	}
+    	return parent::createUrl($route,$params,$ampersand);
+    }
 }

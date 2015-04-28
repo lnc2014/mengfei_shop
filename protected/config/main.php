@@ -18,17 +18,13 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+ 	'defaultController'=>'admin',
 	'modules'=>array(
-		// uncomment the following to enable the Gii tool
-		/*
+		// 使用yii自带的gii生成数据模型，若是线上环境，建议注释掉
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
-			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			'password'=>'123456', 
 		),
-		*/
 	),
 
 	// application components

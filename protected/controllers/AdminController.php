@@ -13,4 +13,12 @@ class AdminController extends BaseAdminController{
 	public function actionIndex(){
 		$this->render('index');
 	}
+	/**
+	 * 
+	 * 商品管理功能
+	 */
+	public function actionGoods(){
+		$this->render('goods');
+	}
+	
 }
